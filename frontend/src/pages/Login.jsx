@@ -14,7 +14,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "https://smart-internship-backend-isxp.onrender.com/login",
         {
           email,
           password
@@ -37,6 +37,29 @@ function Login() {
     } catch(error) {
 
       alert("Server Error");
+
+    }
+
+  }
+
+
+  const handleRegister = async () => {
+
+    try {
+
+      const response = await axios.post(
+        "https://smart-internship-backend-isxp.onrender.com/register",
+        {
+          email,
+          password
+        }
+      );
+
+      alert(response.data.message);
+
+    } catch(error) {
+
+      alert("Registration Failed");
 
     }
 
@@ -68,11 +91,19 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        
         <button
           onClick={handleLogin}
           className="w-full bg-blue-600 text-white p-3 rounded-lg"
         >
           Login
+        </button>
+
+        <button
+          onClick={handleRegister}
+          className="bg-green-600 text-white px-4 py-2 rounded mt-4"
+        >
+          Register
         </button>
 
       </div>
