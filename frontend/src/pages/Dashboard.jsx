@@ -35,7 +35,7 @@ function Dashboard() {
     try {
 
       const response = await axios.get(
-        "https://smart-internship-backend-isxp.onrender.com"
+        "https://smart-internship-backend-isxp.onrender.com/internships"
       );
 
       setInternships(response.data);
@@ -54,7 +54,7 @@ function Dashboard() {
     try {
 
       const response = await axios.post(
-        "https://smart-internship-backend-isxp.onrender.com",
+        "https://smart-internship-backend-isxp.onrender.com/apply",
         {
           studentEmail: "student@gmail.com",
           company: item.company,
