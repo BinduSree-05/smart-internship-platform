@@ -11,6 +11,10 @@ require("dotenv").config();
 
 const app = express();
 
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
+
 // MULTER STORAGE
 
 const storage = multer.diskStorage({
